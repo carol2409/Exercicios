@@ -1,0 +1,129 @@
+EXERCICIO 1
+A)R: A palavra polimorfismo significa "muitas formas", pois "poli" significa "muitas" e "morfismo"(morphos) "formas".
+
+B)R: Assinatura de método é o modo como o método é identificado, em outras palavras, é a identidade do método, com o nome dele, o tipo e seus parâmetros. 
+Ex: int soma (int num1, int num2)
+    String nomeCompleto (String primeiroNome, String sobrenome)
+    
+C)R:No Polimorfismo Estático a assinatura dos metodos são diferentes, sendo os métodos da mesma classe. 
+    Ex: Classe Calculadora
+         int soma (int num1, int num2)  
+         int soma (int num1, int num2, int num3)
+         
+    Já no Polimorfismo Dinâmico a assinatura dos métodos são iguais, sendo cada método de uma classe diferente.
+    Ex: Classe Humano
+         void correr () 
+         
+        Classe Policial()
+         void correr () 
+         
+         
+EXERCICIO 2
+R:
+public class Forma{
+  
+  public String getNome(){
+    return null;
+  }
+  public double calcularPerimetro(){
+    return 0;
+  }
+  public double calcularArea(){
+    return 0;
+  }
+}
+
+
+EXERCICIO 3 e EXERCICIO 4
+R:
+public class Circulo extends Forma{
+  double raio;
+  
+  public String getNome(){
+    return "Circulo";
+  }
+  public double calcularPerimetro(){
+    double result = this.raio ∗ 2 ∗ 𝜋;
+    return result;
+  }
+  public double calcularArea(){
+    double result = Math.pow(this.raio, 2) ∗ 𝜋;
+    return result;
+  }
+}
+
+public class Triangulo extends Forma{
+  double lado;
+  
+  public String getNome(){
+    return "Triângulo";
+  }
+  public double calcularPerimetro(){
+    double result = this.lado ∗ 3;
+    return result;
+  }
+  public double calcularArea(){
+    double result = (Math.pow(this.lado, 2) ∗ Math.sqrt(3)) / 4;
+    return result;
+  }
+}
+
+public class Quadrado extends Forma{
+  double lado;
+  
+  public String getNome(){
+    return "Quadrado";
+  }
+  public double calcularPerimetro(){
+    double result = this.lado ∗ 4;
+    return result;
+  }
+  public double calcularArea(){
+    double result = Math.pow(this.lado, 2);
+    return result;
+  }
+}
+
+public class Retangulo extends Forma{
+  double base;
+  double altura;
+  
+  public String getNome(){
+    return "Retângulo";
+  }
+  public double calcularPerimetro(){
+    double result = this.base ∗ 2 + this.altura ∗ 2;
+    return result;
+  }
+  public double calcularArea(){
+    double result = this.base * this.altura;
+    return result;
+  }
+}
+
+
+EXERCICIO 5
+R: Eu criaria uma classe PecaXadrez com os atributos nome e cor, com um método chamado "andar". 
+   Ex:  public class PecaXadrez{
+          String nome;
+          String cor;
+          
+          public void andar()
+        }
+        
+        
+EXERCICIO 6
+R: Ficaria algo do tipo: 
+     public class Cavalo extends PecaXadrez{
+          
+       public void andar(){
+        //Implementa para andar em L
+       }
+     }
+     
+     public class Bispo extends PecaXadrez{
+          
+       public void andar(){
+        //Implementa para andar na diagonal
+       }
+     }
